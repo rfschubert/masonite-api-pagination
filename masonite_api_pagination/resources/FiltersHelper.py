@@ -1,5 +1,4 @@
 class FiltersHelper:
-
     filters = {
         "gt": ">",
         "gte": ">=",
@@ -12,9 +11,14 @@ class FiltersHelper:
         "not_starts_with": "not like",
         "ends_with": "like",
         "not_ends_with": "not like",
+        "between": "between",
+        "not_between": "not_between",
+        "in": "in",
+        "not_in": "not_in",
     }
 
-    def mount(self, input, param):
+    def mount(self, input, param, model, ordering=False):
+
         field = input.split('__')[0]
         try:
             ini_filter = input.split('__')[1]
@@ -31,7 +35,33 @@ class FiltersHelper:
         else:
             param = "{}".format(param) if isinstance(param, str) else param
 
-        return field, filter, param
+        if filter == 'between':
+            model = model.where_between(field, self.param_to_array(param))
+        elif filter == 'not_between':
+            model = model.where_not_between(field, self.param_to_array(param))
+        elif filter == 'in':
+            model = model.where_in(field, self.param_to_array(param))
+        elif filter == 'not_in':
+            model = model.where_not_in(field, self.param_to_array(param))
+        elif filter is not None:
+            model = model.where(field, filter, param)
+        else:
+            model = model.where(field, param)
+
+        if ordering is not False:
+            if ordering[:1] == '-':
+                order_by_field = ordering[1:]
+                direction = "DESC"
+            else:
+                order_by_field = ordering
+                direction = "ASC"
+
+            model = model.order_by(order_by_field, direction)
+
+        return model
+
+    def param_to_array(self, param):
+        return param.split(',')
 
     def mount_like(self, filter, param):
         like_filters = {

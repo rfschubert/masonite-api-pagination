@@ -17,13 +17,11 @@ class PaginatedResource(Resource):
         else:
             model = query
 
+        ordering = self.request.input('ordering')
+
         for key in self.request.request_variables:
-            if key != 'page':
-                res = FiltersHelper().mount(key, self.request.request_variables[key])
-                if res[1] is not None:
-                    model = model.where(res[0], res[1], res[2])
-                else:
-                    model = model.where(res[0], res[2])
+            if key != 'page' and key != 'ordering':
+                model = FiltersHelper().mount(key, self.request.request_variables[key], model, ordering)
 
         return model
 
@@ -33,7 +31,6 @@ class PaginatedResource(Resource):
             query = self.model
 
         query = self.package_filter(query)
-
 
         max_rows = self.model._per_page
         current_page = None if self.request.input('page') is False else self.request.input('page')

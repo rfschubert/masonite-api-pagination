@@ -3,11 +3,29 @@ import math
 
 from api.resources import Resource
 
+from masonite_api_pagination.resources.FiltersHelper import FiltersHelper
+
 
 class PaginatedResource(Resource):
 
     def index(self):
-        return self.paginate()
+        return self.filter(query=None)
+
+    def filter(self, query=None):
+        if query is None
+            model = self.model
+        else:
+            model = query
+
+        for key in self.request.request_variables:
+            if key != 'page':
+                res = FiltersHelper().mount(key, self.request.request_variables[key])
+                if res[1] is not None:
+                    model = model.where(res[0], res[1], res[2])
+                else:
+                    model = model.where(res[0], res[2])
+
+        return self.paginate(model)
 
     def paginate(self, query=None):
         if query is None:

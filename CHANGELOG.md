@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8 - 2019-03-05
+
+- Allow filtering
+
 ## 0.0.7 - 2019-03-05
 
 - Basic pagination

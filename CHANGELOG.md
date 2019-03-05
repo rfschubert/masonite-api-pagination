@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 - 2019-03-05
+
+- Improved backward compatibility
+- Version up and renamed methods to avoid masonite-api colisions
+
 ## 0.0.8 - 2019-03-05
 
 - Allow filtering

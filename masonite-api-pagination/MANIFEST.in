@@ -1,0 +1,1 @@
+include masonite-api-pagination/snippets/configs/*

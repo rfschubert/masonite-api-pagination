@@ -6,7 +6,7 @@ setup(
     author_email="rfswdp@gmail.com",
     description="Simple yet powerful masonite-api pagination",
     url="https://github.com/rfschubert/masonite-api-pagination",
-    version='0.0.2',
+    version='0.0.3',
     packages=['masonite-api-pagination'],
     install_requires=[
         'masonite',

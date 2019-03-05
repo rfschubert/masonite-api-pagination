@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58e0e3aa-d574-4554-abf8-559a23d7ed54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/masonite_api_pagination.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/masonite_api_pagination.egg-info/PKG-INFO" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

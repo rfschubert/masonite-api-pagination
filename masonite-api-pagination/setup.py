@@ -6,6 +6,7 @@ setup(
     packages=['masonite-api-pagination'],
     install_requires=[
         'masonite',
+        'masonite-api'
     ],
     include_package_data=True,
 )

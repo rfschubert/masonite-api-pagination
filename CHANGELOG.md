@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - 2019-03-05
+
+* Added `show_filters` option to pagination
+
 ## 0.2.0 - 2019-03-05
 
 * Refactored to simplify new filters

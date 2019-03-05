@@ -74,3 +74,10 @@ class FiltersHelper:
         }
 
         return like_filters[filter]
+
+    def get_allowed_filters(self):
+        allowed_filters = []
+        for key in self.filters:
+            allowed_filters.append(key)
+
+        return allowed_filters

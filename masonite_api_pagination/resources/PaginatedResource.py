@@ -20,7 +20,7 @@ class PaginatedResource(Resource):
         ordering = self.request.input('ordering')
 
         for key in self.request.request_variables:
-            if key != 'page' and key != 'ordering':
+            if key != 'page' and key != 'ordering' and key != 'show_filters':
                 model = FiltersHelper().mount(key, self.request.request_variables[key], model, ordering)
 
         return model
@@ -52,9 +52,15 @@ class PaginatedResource(Resource):
         if math.ceil(total_rows_count / max_rows) > current_page:
             next = "{}?page={}".format(self.route_url, current_page + 1)
 
-        return {
+        response_format = {
             "count": total_rows_count,
             "previous": previous,
             "next": next,
             "results": json.loads(results.to_json())
         }
+
+        filters = self.request.input('show_filters')
+        if filters is not False:
+            response_format['filters'] = FiltersHelper().get_allowed_filters()
+
+        return response_format

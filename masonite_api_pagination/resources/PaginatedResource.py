@@ -12,7 +12,7 @@ class PaginatedResource(Resource):
         return self.filter(query=None)
 
     def filter(self, query=None):
-        if query is None
+        if query is None:
             model = self.model
         else:
             model = query

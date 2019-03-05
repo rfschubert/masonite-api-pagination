@@ -8,5 +8,6 @@ masonite_api_pagination.egg-info/SOURCES.txt
 masonite_api_pagination.egg-info/dependency_links.txt
 masonite_api_pagination.egg-info/requires.txt
 masonite_api_pagination.egg-info/top_level.txt
+masonite_api_pagination/resources/FiltersHelper.py
 masonite_api_pagination/resources/PaginatedResource.py
 masonite_api_pagination/resources/__init__.py

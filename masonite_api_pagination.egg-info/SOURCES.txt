@@ -1,0 +1,10 @@
+MANIFEST.in
+setup.py
+masonite-api-pagination/__init__.py
+masonite-api-pagination/integration.py
+masonite-api-pagination/setup.py
+masonite_api_pagination.egg-info/PKG-INFO
+masonite_api_pagination.egg-info/SOURCES.txt
+masonite_api_pagination.egg-info/dependency_links.txt
+masonite_api_pagination.egg-info/requires.txt
+masonite_api_pagination.egg-info/top_level.txt

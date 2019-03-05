@@ -1,1 +1,2 @@
 include masonite-api-pagination/resources/*
+include masonite-api-pagination/resources

@@ -1,13 +1,15 @@
 from setuptools import setup
 
 setup(
-    name="masonite-api-pagination",
+    name="masonite_api_pagination",
     author="Raphael Schubert",
     author_email="rfswdp@gmail.com",
     description="Simple yet powerful masonite-api pagination",
-    url="https://github.com/rfschubert/masonite-api-pagination",
-    version='0.0.3',
-    packages=['masonite-api-pagination'],
+    url="https://github.com/rfschubert/masonite_api_pagination",
+    version='0.0.5',
+    packages=[
+        'masonite_api_pagination'
+    ],
     install_requires=[
         'masonite',
         'masonite-api'

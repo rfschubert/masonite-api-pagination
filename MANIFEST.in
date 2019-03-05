@@ -1,0 +1,2 @@
+include masonite-api-pagination/resources/*
+recursive-include examples *.py
